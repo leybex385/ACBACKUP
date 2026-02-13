@@ -1,3 +1,4 @@
+
 /**
  * Trading Logic - Close Order / Sell Trade
  */
@@ -239,18 +240,73 @@ window.executeCloseOrder = async function () {
 
 // --- Delegated Event Handler ---
 document.addEventListener("click", function (e) {
-    const btn = e.target.closest(".close-order-btn");
-    if (!btn) return;
+    // 1. Close Order / Sell Trade
+    const closeBtn = e.target.closest(".close-order-btn");
+    if (closeBtn) {
+        const tradeId = closeBtn.dataset.id;
+        console.log("Close Order Clicked:", tradeId);
+        if (typeof window.openCloseOrderModal === "function") {
+            window.openCloseOrderModal(tradeId);
+        } else {
+            console.error("openCloseOrderModal is not defined");
+        }
+        return;
+    }
 
-    const tradeId = btn.dataset.id;
-    console.log("Close Order Clicked:", tradeId);
-
-    if (typeof window.openCloseOrderModal === "function") {
-        window.openCloseOrderModal(tradeId);
-    } else {
-        console.error("openCloseOrderModal is not defined");
+    // 2. OTC / IPO Subscribe
+    const subBtn = e.target.closest(".subscribe-btn");
+    if (subBtn) {
+        const productId = subBtn.dataset.id;
+        console.log("Subscribe Clicked:", productId);
+        if (typeof window.openOTCSubscribeModal === "function") {
+            window.openOTCSubscribeModal(productId);
+        } else {
+            console.error("openOTCSubscribeModal is not defined");
+        }
+        return;
     }
 });
+
+/**
+ * Opens the subscription/detail view for OTC/IPO products
+ */
+window.openOTCSubscribeModal = function (productId) {
+    if (!productId) return;
+    console.log("Opening OTC Subscription for:", productId);
+
+    const me = window.MarketEngine;
+    if (!me) {
+        console.error("MarketEngine not found");
+        return;
+    }
+
+    const product = me.getProduct(productId);
+    if (!product) {
+        console.error("Product not found:", productId);
+        return;
+    }
+
+    console.log("Product Data:", product);
+
+    if (typeof window.openStockDetail === "function") {
+        const exchange = product.symbol.includes('NSE') ? 'NSE' : 'BSE';
+        const priceStr = '₹' + product.price.toLocaleString('en-IN', { minimumFractionDigits: 2 });
+
+        // Handle yield/profit display
+        let changeStr = '';
+        if (product.type === 'IPO' || product.type === 'OTC') {
+            changeStr = product.yield || 'Live';
+        } else {
+            changeStr = (product.change >= 0 ? '+' : '') + (product.change || 0).toFixed(2) + '%';
+        }
+
+        const color = (product.change >= 0 || product.type !== 'stock') ? '#10b981' : '#ef4444';
+
+        window.openStockDetail(product.symbol, product.name, exchange, priceStr, changeStr, color, product.type);
+    } else {
+        console.error("openStockDetail not defined");
+    }
+};
 
 // Alias for backward compatibility
 window.openSellingModal = window.openCloseOrderModal;
