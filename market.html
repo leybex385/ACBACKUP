@@ -4630,6 +4630,7 @@
             renderDetailHoldings();
             lucide.createIcons();
         }
+        window.openStockDetail = openStockDetail;
 
         async function handleSellFromDetail() {
             const btn = document.getElementById('sellBtn');
@@ -4673,6 +4674,7 @@
             document.getElementById('stockDetailView').style.display = 'none';
             lucide.createIcons();
         }
+        window.closeStockDetail = closeStockDetail;
 
         // View Switching Logic (Market / Discover / Portfolio / Me)
         function showMarketView() {
@@ -4886,8 +4888,8 @@
                                         <span class="value">Tradable</span>
                                     </div>
                                 </div>
-                                <button class="premium-subscribe-btn" style="background:#1e56a0; color:white;"
-                                    onclick="openStockDetail('${s.symbol}', '${s.name}', '${exchange}', '₹${s.price.toLocaleString('en-IN')}', '${s.change >= 0 ? '+' : ''}${s.change.toFixed(2)}%', '${s.change >= 0 ? '#10b981' : '#ef4444'}', 'stock')">
+                                <button class="premium-subscribe-btn subscribe-btn" style="background:#1e56a0; color:white;"
+                                    data-id="${s.symbol}">
                                     Trade Now
                                 </button>
                             </div>
@@ -4918,8 +4920,8 @@
                                     <span class="value">${vipLv}</span>
                                 </div>
                             </div>
-                            <button class="premium-subscribe-btn ${isLocked ? 'locked' : ''}" 
-                                onclick="openStockDetail('${s.symbol}', '${s.name}', '${exchange}', '₹${s.price.toLocaleString('en-IN')}', '${profitRange}', '#10b981', '${s.type}')">
+                            <button class="premium-subscribe-btn subscribe-btn ${isLocked ? 'locked' : ''}" 
+                                data-id="${s.symbol}">
                                 ${isLocked ? 'Locked' : 'Subscribe'}
                             </button>
                         </div>
@@ -4945,8 +4947,8 @@
                             ${s.name} ${s.type !== 'stock' ? `<span style="font-size:0.65rem; background:#eff6ff; color:#3b82f6; padding:2px 6px; border-radius:4px; font-weight:700; margin-left:6px;">${s.type}</span>` : ''}
                         </div>
                         
-                        <button class="h-btn view" style="width: 100%; border-radius: 12px; height: 44px; background: #1e56a0; font-weight: 700;"
-                            onclick="openStockDetail('${s.symbol}', '${s.name}', 'NSE', '₹${s.price.toLocaleString('en-IN')}', '${s.change >= 0 ? '+' : ''}${s.change.toFixed(2)}%', '${s.change >= 0 ? '#10b981' : '#ef4444'}', '${s.type}')">
+                        <button class="h-btn view subscribe-btn" style="width: 100%; border-radius: 12px; height: 44px; background: #1e56a0; font-weight: 700;"
+                            data-id="${s.symbol}">
                             Trade Now
                         </button>
                     </div>
