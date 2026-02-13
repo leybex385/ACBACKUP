@@ -8292,4 +8292,145 @@
     .detail-info-table tr td {
         border-bottom: 1px solid #262626 !important;
     }
+
+    /* =========================================
+       ADDITIONAL REFINEMENTS (Blue to Gold / Light to Dark)
+       ========================================= */
+
+    /* Exchange Tabs (NSE/BSE) */
+    .exchange-tab {
+        background: #1a1a1a !important;
+        color: #94a3b8 !important;
+        border: 1px solid #333 !important;
+    }
+
+    .exchange-tab.active {
+        background: #d4af37 !important;
+        color: #000 !important;
+        border-color: #d4af37 !important;
+        font-weight: 700 !important;
+    }
+
+    /* IPO Status Badges */
+    .ipo-item {
+        border-bottom: 1px solid #262626 !important;
+        color: #e2e8f0 !important;
+    }
+
+    .ipo-item>div:first-child>div:last-child {
+        color: #94a3b8 !important;
+        /* Date color */
+    }
+
+    /* Specific Badge Overrides to muted gold/dark theme style */
+    .ipo-item div[style*="background: #eff6ff"] {
+        /* Upcoming (Blue) -> Gold/Dark */
+        background: #2a2a2a !important;
+        color: #f59e0b !important;
+        border: 1px solid #f59e0b !important;
+    }
+
+    .ipo-item div[style*="background: #f0fdf4"] {
+        /* Open (Green) -> Keep Green but Darker Bg */
+        background: #052e16 !important;
+        color: #4ade80 !important;
+        border: 1px solid #059669 !important;
+    }
+
+    .ipo-item div[style*="background: #fef3c7"] {
+        /* Soon (Yellow) -> Darker Yellow */
+        background: #2a2a2a !important;
+        color: #fbbf24 !important;
+        border: 1px solid #b45309 !important;
+    }
+
+    /* Side List Titles (Star, Trending Icons etc) */
+    .side-list-title i {
+        color: #d4af37 !important;
+    }
+
+    /* Specific overrides for Up/Down trend icons to keep Green/Red logic if preferred, 
+       but user asked for Gold theme. Let's keep Green/Red for directional logic as it's functional,
+       but background of tabs is handled above. */
+
+    /* Search Bar in Header (if visible) */
+    .search-bar {
+        background: #111 !important;
+        border: 1px solid #333 !important;
+    }
+
+    .search-input {
+        color: #fff !important;
+    }
+
+    .search-input::placeholder {
+        color: #64748b !important;
+    }
+
+    /* Watchlist "No Data" Text */
+    .auth-locked-content {
+        color: #94a3b8 !important;
+    }
+
+    /* Buy Widget Inputs (Stock Detail) */
+    .input-group .q-input {
+        background: #111 !important;
+        border: 1px solid #333 !important;
+        color: #fff !important;
+    }
+
+    .input-group .max-btn {
+        background: #262626 !important;
+        color: #d4af37 !important;
+        border: 1px solid #333 !important;
+    }
+
+    .input-group .max-btn:hover {
+        border-color: #d4af37 !important;
+    }
+
+    /* Trading Info Table in Detail View */
+    .trading-info-table tr td {
+        border-bottom: 1px solid #262626 !important;
+        color: #94a3b8 !important;
+    }
+
+    .trading-info-table tr td.val {
+        color: #f8fafc !important;
+    }
+
+    .trading-info-table tr td.val.total {
+        color: #d4af37 !important;
+    }
+
+    /* Buy/Sell Buttons */
+    button.buy-btn {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        color: #000 !important;
+        font-weight: 800 !important;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2) !important;
+    }
+
+    button.buy-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3) !important;
+    }
+
+    /* Sell button stays red but premium */
+    button#sellBtn {
+        background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
+        color: #fff !important;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2) !important;
+    }
+
+    /* Range Slider Track */
+    input[type=range] {
+        accent-color: #d4af37 !important;
+    }
+
+    /* Footer */
+    .footer-market {
+        border-top: 1px solid #262626 !important;
+        color: #64748b !important;
+    }
 </style>
