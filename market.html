@@ -3172,10 +3172,10 @@
                     "symbol": symbol,
                     "interval": currentInterval,
                     "timezone": "Asia/Kolkata",
-                    "theme": "light",
+                    "theme": "dark",
                     "style": "1",
                     "locale": "in",
-                    "toolbar_bg": "#f1f3f6",
+                    "toolbar_bg": "#111111",
                     "enable_publishing": false,
                     "allow_symbol_change": true,
                     "container_id": "tradingview_widget",
@@ -3185,7 +3185,21 @@
                     "details": false,
                     "hotlist": false,
                     "calendar": false,
-                    "studies": ["Volume@tv-basicstudies"]
+                    "studies": ["Volume@tv-basicstudies"],
+                    "overrides": {
+                        "paneProperties.background": "#0b0b0b",
+                        "paneProperties.vertGridProperties.color": "#1f1f1f",
+                        "paneProperties.horzGridProperties.color": "#1f1f1f",
+                        "scalesProperties.textColor": "#94a3b8",
+                        "mainSeriesProperties.candleStyle.upColor": "#10b981",
+                        "mainSeriesProperties.candleStyle.downColor": "#ef4444",
+                        "mainSeriesProperties.candleStyle.wickUpColor": "#10b981",
+                        "mainSeriesProperties.candleStyle.wickDownColor": "#ef4444",
+                        "mainSeriesProperties.candleStyle.borderUpColor": "#10b981",
+                        "mainSeriesProperties.candleStyle.borderDownColor": "#ef4444",
+                        "volume.volume.color.1": "#d4af37",
+                        "volume.volume.color.0": "#ef4444"
+                    }
                 });
             }
 
@@ -4596,13 +4610,22 @@
                 "symbol": exchange + ":" + symbol,
                 "interval": "D",
                 "timezone": "Etc/UTC",
-                "theme": "light",
+                "theme": "dark",
                 "style": "3",
                 "locale": "en",
-                "toolbar_bg": "#f1f3f6",
+                "toolbar_bg": "#111111",
                 "enable_publishing": false,
                 "allow_symbol_change": true,
-                "container_id": "tradingview_det"
+                "container_id": "tradingview_det",
+                "overrides": {
+                    "paneProperties.background": "#111111",
+                    "paneProperties.vertGridProperties.color": "#1f1f1f",
+                    "paneProperties.horzGridProperties.color": "#1f1f1f",
+                    "scalesProperties.textColor": "#94a3b8",
+                    "mainSeriesProperties.areaStyle.linecolor": "#d4af37",
+                    "mainSeriesProperties.areaStyle.color1": "rgba(212, 175, 55, 0.2)",
+                    "mainSeriesProperties.areaStyle.color2": "rgba(212, 175, 55, 0.05)"
+                }
             });
 
             window.scrollTo(0, 0);
@@ -8053,5 +8076,220 @@
         display: flex !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+</style>
+
+<style>
+    /* =========================================
+       MARKET PAGE BLACK & GOLD THEME OVERRIDES
+       ========================================= */
+
+    /* 1. Page Background & Main Layout */
+    body,
+    html {
+        background-color: #0b0b0b !important;
+        color: #e2e8f0 !important;
+    }
+
+    .market-wrapper,
+    .market-content,
+    #mainDashboard {
+        background-color: #0b0b0b !important;
+        color: #e2e8f0 !important;
+    }
+
+    /* 2. Card Containers (Replace White with Dark) */
+    .m-card,
+    .h-card,
+    .main-index-view,
+    .styled-chart-box,
+    .premium-trade-card {
+        background-color: #111111 !important;
+        border: 1px solid #2a2a2a !important;
+        color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    /* Remove white shadows/glows */
+    .m-card,
+    .h-card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* 3. Typography & Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .section-title,
+    .premium-asset-name,
+    .index-val,
+    .asset-val,
+    .stock-ticker,
+    .h-stock-info h3,
+    .h-stat-val,
+    .detail-total-val,
+    .news-item h4 {
+        color: #f8fafc !important;
+    }
+
+    .section-title.indices {
+        color: #ffffff !important;
+    }
+
+    .text-muted,
+    .asset-label,
+    .asset-sub,
+    .stock-full-name,
+    .h-stock-meta,
+    .h-stat-label,
+    .news-item p,
+    .news-meta,
+    .premium-return-label,
+    .detail-total-label,
+    .detail-info-table tr td:first-child {
+        color: #94a3b8 !important;
+    }
+
+    /* 4. Interactive Elements & Accents */
+    /* Icons */
+    i[data-lucide],
+    svg {
+        color: #d4af37 !important;
+        /* Gold icons */
+    }
+
+    /* Specific overrides for status colors to keep them functional (Green/Red) */
+    .asset-val.green,
+    .index-chg.green,
+    .sector-pct.up,
+    .h-stat-val.green,
+    .h-status-badge {
+        color: #10b981 !important;
+        /* Keep Green */
+    }
+
+    .asset-val.red,
+    .index-chg.red,
+    .sector-pct.down,
+    .h-stat-val.red {
+        color: #ef4444 !important;
+        /* Keep Red */
+    }
+
+    /* Buttons */
+    .tf-btn {
+        background: #1a1a1a !important;
+        color: #94a3b8 !important;
+        border: 1px solid #333 !important;
+    }
+
+    .tf-btn:hover {
+        border-color: #d4af37 !important;
+        color: #d4af37 !important;
+    }
+
+    .tf-btn.active {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        color: #000 !important;
+        border-color: #d4af37 !important;
+        font-weight: 800 !important;
+    }
+
+    .mini-tf-btn {
+        background: #1a1a1a !important;
+        color: #94a3b8 !important;
+        border: 1px solid #333 !important;
+    }
+
+    .mini-tf-btn.active {
+        background: #d4af37 !important;
+        color: #000 !important;
+        border-color: #d4af37 !important;
+    }
+
+    /* 5. Specific Component Overrides */
+    /* Asset Cards */
+    .asset-mini-card {
+        background: #161616 !important;
+        border: 1px solid #262626 !important;
+    }
+
+    /* Sector Cards */
+    .sector-card {
+        background: #161616 !important;
+        border: 1px solid #262626 !important;
+    }
+
+    .sector-card:hover {
+        border-color: #d4af37 !important;
+        background: #1a1a1a !important;
+    }
+
+    .sector-name {
+        color: #e2e8f0 !important;
+    }
+
+    /* Index Cards (Carousel) */
+    .index-card {
+        background: #161616 !important;
+        border: 1px solid #262626 !important;
+    }
+
+    .index-card.active {
+        border-color: #d4af37 !important;
+        background: #1c1c1c !important;
+    }
+
+    .index-name {
+        color: #d4af37 !important;
+    }
+
+    /* Gold Index Names */
+
+    /* Stock List / Watchlist */
+    .stock-row,
+    .news-item {
+        border-bottom: 1px solid #262626 !important;
+    }
+
+    .stock-circle {
+        background: #262626 !important;
+        color: #d4af37 !important;
+        border: 1px solid #333 !important;
+    }
+
+    /* Range Slider */
+    .day-range-container {
+        border-top: 1px solid #262626 !important;
+    }
+
+    .slider-marker {
+        background: #000 !important;
+        border-color: #d4af37 !important;
+    }
+
+    /* Detail Modal / Locked Sections */
+    .auth-lock-overlay {
+        background: rgba(0, 0, 0, 0.7) !important;
+        backdrop-filter: blur(4px);
+    }
+
+    .auth-lock-btn {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        color: #000 !important;
+        font-weight: 800 !important;
+    }
+
+    /* Chart Container specific */
+    .chart-container-realtime {
+        border: 1px solid #333 !important;
+    }
+
+    /* Table borders */
+    .detail-info-table tr td {
+        border-bottom: 1px solid #262626 !important;
     }
 </style>
