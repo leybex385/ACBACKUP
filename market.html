@@ -612,12 +612,12 @@
         }
 
         .h-btn.close {
-            background: #fb923c;
-            color: white;
+            background: #d4af37;
+            color: black;
         }
 
         .h-btn.close:hover {
-            background: #f97316;
+            background: #aa8c2c;
         }
 
         /* Premium Discover Cards (User Request) */
@@ -3693,10 +3693,10 @@
                 <section class="m-card" style="margin-top: 1.5rem;">
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <div style="font-weight: 700; color: #1e56a0; display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="font-weight: 700; color: #d4af37; display: flex; align-items: center; gap: 0.5rem;">
                             <i data-lucide="history" size="18"></i> Your Holdings
                         </div>
-                        <i data-lucide="rotate-cw" size="18" color="#1e56a0" style="cursor: pointer;"
+                        <i data-lucide="rotate-cw" size="18" color="#d4af37" style="cursor: pointer;"
                             onclick="if(typeof renderDetailHoldings === 'function') renderDetailHoldings()"></i>
                     </div>
                     <div id="detHoldingsList" style="max-height: 300px; overflow-y: auto;">
@@ -5374,7 +5374,7 @@
                                     <button class="h-btn close" style="margin-top: 0.5rem; padding: 4px 12px; height: auto; font-size: 0.75rem;" onclick="openSellingModal('${t.id}')">Close Order</button>
                                 </div>
                                 <div style="text-align: right;">
-                                    <div style="font-weight: 700; color: #1e56a0;">₹${parseFloat(t.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
+                                    <div style="font-weight: 700; color: #d4af37;">₹${parseFloat(t.total_amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
                                     <div style="font-size: 0.75rem; color: #64748b;">${t.quantity} Shares</div>
                                 </div>
                             </div>
@@ -7321,9 +7321,9 @@
                         <span id="ocTxn" style="font-weight: 600; color: #ef4444; font-size: 0.85rem;">+₹0.00</span>
                     </div>
                     <div
-                        style="display: flex; justify-content: space-between; padding-top: 1rem; border-top: 1px dashed #cbd5e1;">
-                        <span style="color: #1e56a0; font-weight: 800; font-size: 1rem;">EST. TOTAL</span>
-                        <span id="ocTotal" style="font-weight: 900; color: #1e56a0; font-size: 1.4rem;">₹0.00</span>
+                        style="display: flex; justify-content: space-between; padding-top: 1rem; border-top: 1px dashed #333;">
+                        <span style="color: #d4af37; font-weight: 800; font-size: 1rem;">EST. TOTAL</span>
+                        <span id="ocTotal" style="font-weight: 900; color: #d4af37; font-size: 1.4rem;">₹0.00</span>
                     </div>
                 </div>
 
@@ -7336,9 +7336,9 @@
                 </div>
 
                 <button id="ocConfirmBtn"
-                    style="width: 100%; padding: 1.25rem; background: #1e56a0; color: white; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 6px -1px rgba(30, 86, 160, 0.3);"
-                    onmouseover="this.style.background='#16427d'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 15px -3px rgba(30, 86, 160, 0.4)';"
-                    onmouseout="this.style.background='#1e56a0'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(30, 86, 160, 0.3)';">CONFIRM
+                    style="width: 100%; padding: 1.25rem; background: #d4af37; color: black; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);"
+                    onmouseover="this.style.background='#aa8c2c'; this.style.transform='translateY(-2px)';"
+                    onmouseout="this.style.background='#d4af37'; this.style.transform='translateY(0)';">CONFIRM
                     BUY ORDER</button>
 
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: #94a3b8; font-weight: 500;">
@@ -7351,9 +7351,11 @@
     <div id="purchaseConfirmModal" class="center-popup-modal" onclick="if(event.target == this) closePurchaseModal()">
         <div class="center-popup-content"
             style="max-width: 480px; padding: 0; overflow: hidden; border: none; border-radius: 20px;">
-            <div style="background: #1e56a0; padding: 1.5rem; color: white;">
-                <h2 style="font-weight: 800; margin: 0; font-size: 1.25rem;">Subscription Confirmation</h2>
-                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Review your institutional allocation
+            <div style="background: #d4af37; padding: 1.5rem; color: black;">
+                <h2 style="font-weight: 800; margin: 0; font-size: 1.25rem; color: black;">Subscription Confirmation
+                </h2>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px; color: black;">Review your institutional
+                    allocation
                     request</div>
             </div>
             <div class="popup-body" style="padding: 1.5rem;">
@@ -7371,9 +7373,9 @@
                         <span id="cpQty" style="font-weight: 700; color: #1e293b;">0</span>
                     </div>
                     <div
-                        style="display: flex; justify-content: space-between; padding-top: 1rem; border-top: 1px dashed #cbd5e1;">
-                        <span style="color: #1e56a0; font-weight: 800;">TOTAL PAYABLE</span>
-                        <span id="cpTotal" style="font-weight: 900; color: #1e56a0; font-size: 1.25rem;">₹0.00</span>
+                        style="display: flex; justify-content: space-between; padding-top: 1rem; border-top: 1px dashed #333;">
+                        <span style="color: #d4af37; font-weight: 800;">TOTAL PAYABLE</span>
+                        <span id="cpTotal" style="font-weight: 900; color: #d4af37; font-size: 1.25rem;">₹0.00</span>
                     </div>
                 </div>
 
@@ -7384,7 +7386,7 @@
                 </div>
 
                 <button class="logout-btn"
-                    style="background: #1e56a0; width: 100%; border-radius: 12px; height: 56px; font-weight: 800; border:none; color:white; cursor:pointer; font-size: 1rem; transition: all 0.2s;"
+                    style="background: #d4af37; width: 100%; border-radius: 12px; height: 56px; font-weight: 800; border:none; color:black; cursor:pointer; font-size: 1rem; transition: all 0.2s;"
                     onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'"
                     id="cpSubmitBtn" onclick="confirmPurchaseSubscription()">SEND SUBSCRIPTION REQUEST</button>
             </div>
@@ -8600,14 +8602,212 @@
     .btn-trade-action {
         background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
         color: #000 !important;
+    }
+
+    .h-head h3 {
+        color: #f8fafc !important;
+    }
+
+    .h-stock-meta {
+        color: #94a3b8 !important;
+    }
+
+    .h-stat-label {
+        color: #64748b !important;
+    }
+
+    .h-stat-val {
+        color: #f8fafc !important;
+    }
+
+    .h-stat-val.green {
+        color: #10b981 !important;
+    }
+
+    .h-stat-val.red {
+        color: #ef4444 !important;
+    }
+
+    /* View Details Button */
+    .h-btn.view {
+        background: #262626 !important;
+        color: #e2e8f0 !important;
+        border: 1px solid #475569 !important;
+    }
+
+    .h-btn.view:hover {
+        border-color: #d4af37 !important;
+        color: #d4af37 !important;
+    }
+
+    /* =========================================
+       TRADE MODALS & BUTTONS (Black & Gold)
+       ========================================= */
+
+    /* Generic Modal Content Updates */
+    .center-popup-content {
+        background-color: #111111 !important;
+        border: 1px solid #333 !important;
+        color: #e2e8f0 !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Modal Headers (Blue/Red -> Dark/Gold where applicable) */
+    /* Order Confirm Header (Blue) -> Gold Gradient */
+    #orderConfirmModal .center-popup-content>div:first-child,
+    #purchaseConfirmModal .center-popup-content>div:first-child {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        color: #000 !important;
+    }
+
+    #orderConfirmModal h2,
+    #purchaseConfirmModal h2 {
+        color: #000 !important;
+    }
+
+    /* Close Order Header (Red) -> Deep Red (Keep semantic danger, but darker/richer) */
+    #closeOrderModal .center-popup-content>div:first-child {
+        background: linear-gradient(135deg, #7f1d1d 0%, #450a0a 100%) !important;
+        color: #fff !important;
+    }
+
+    /* Modal Body Inner Cards (Light Gray) -> Dark Gray */
+    .popup-body div[style*="background: #f8fafc"],
+    .popup-body div[style*="background: #f1f5f9"],
+    .popup-body div[style*="background: #fffbeb"],
+    .popup-body div[style*="background: #eef2ff"],
+    .popup-body div[style*="background: #fef2f2"] {
+        background-color: #1a1a1a !important;
+        border-color: #333 !important;
+        color: #e2e8f0 !important;
+    }
+
+    /* Modal Text Overrides */
+    .center-popup-content span[style*="color: #64748b"],
+    .center-popup-content div[style*="color: #64748b"] {
+        color: #94a3b8 !important;
+    }
+
+    .center-popup-content span[style*="color: #1e293b"],
+    .center-popup-content div[style*="color: #1e293b"] {
+        color: #f8fafc !important;
+        /* Main values to white */
+    }
+
+    .center-popup-content span[style*="color: #1e56a0"],
+    .center-popup-content div[style*="color: #1e56a0"] {
+        color: #d4af37 !important;
+        /* Blue accents to Gold */
+    }
+
+    /* Confirm Buttons */
+    #ocConfirmBtn,
+    #cpSubmitBtn {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        color: #000 !important;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2) !important;
+    }
+
+    #ocConfirmBtn:hover,
+    #cpSubmitBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3) !important;
+    }
+
+    /* Close/Sell Buttons in Lists */
+    .h-btn.close {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%) !important;
+        /* Request says "Close Order button uses gold theme" */
+        color: #000 !important;
         border: none !important;
         font-weight: 700 !important;
     }
 
-    /* Empty States */
-    #tradesList>div,
-    #transList>div,
-    #upcomingSection>div {
+    /* Close Modal Action Button (in Close Order Modal) */
+    #coRefreshBtn {
+        background: #262626 !important;
+        color: #d4af37 !important;
+        border: 1px solid #d4af37 !important;
+    }
+
+    /* Close Order Modal - Main Button */
+    #closeOrderModal button[onclick="executeCloseOrder()"] {
+        /* Assuming there is a main confirm button, usually red */
+        background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
+    }
+
+    /* Holdings List (Detail View & Discovery) */
+    .holding-grid .h-card {
+        background-color: #111111 !important;
+        border: 1px solid #262626 !important;
+    }
+
+    /* Transaction Card */
+    .t-card {
+        background-color: #111111 !important;
+        border: 1px solid #262626 !important;
+    }
+
+    .t-stock-name {
+        color: #f8fafc !important;
+    }
+
+    .t-info-val {
+        color: #f8fafc !important;
+    }
+
+    .t-info-label {
         color: #64748b !important;
+    }
+
+    /* Stock Detail / Trade Now Page */
+    #stockDetailView {
+        background-color: #0b0b0b !important;
+        color: #e2e8f0 !important;
+    }
+
+    #stockDetailView .m-card,
+    #stockDetailView .main-index-view,
+    #stockDetailView .buy-widget {
+        background-color: #111111 !important;
+        border: 1px solid #262626 !important;
+        color: #e2e8f0 !important;
+    }
+
+    #stockDetailView .stock-full-name {
+        color: #94a3b8 !important;
+    }
+
+    #stockDetailView .info-label {
+        color: #64748b !important;
+    }
+
+    #stockDetailView .info-val-text {
+        color: #f8fafc !important;
+    }
+
+    #stockDetailView .tf-btn {
+        background: #1a1a1a !important;
+        color: #94a3b8 !important;
+        border-color: #333 !important;
+    }
+
+    #stockDetailView .tf-btn.active {
+        background: #d4af37 !important;
+        color: #000 !important;
+        border-color: #d4af37 !important;
+    }
+
+    #stockDetailView .detail-info-table tr td {
+        border-bottom: 1px solid #262626 !important;
+    }
+
+    #stockDetailView .detail-info-table tr td:last-child {
+        color: #f8fafc !important;
+    }
+
+    #stockDetailView #detHoldingsList>div {
+        border-bottom: 1px solid #262626 !important;
+        background: #111 !important;
     }
 </style>
